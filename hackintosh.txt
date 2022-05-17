@@ -1,0 +1,13 @@
+menuentry 'MacOS' $menuentry_id_option 'macOS-efi' {
+	insmod chain
+	insmod part_gpt
+	insmod fat
+	set root=(hd1,gpt1)
+	chainloader /efi/OC/OpenCore.efi
+	set root=(hd1,gpt1)/efi/OC
+}
+
+LauncherOption disabled auto boot order change
+use previous bootx64.efi instead of opencore BOOTx64.efi
+F12 to switch to Opencore
+ACPI Injection sucks
